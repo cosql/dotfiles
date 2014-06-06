@@ -1,0 +1,45 @@
+;; Object mike/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mike/"
+  :tables (list 
+   (semanticdb-table "test.cc"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("static_value" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1 29])
+            ("a_function_to_call" function (:type "int") nil [31 102])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [114 123])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [124 143]))                  
+                :type "int")
+                nil [104 190]))          
+    :file "test.cc"
+    :pointmax 191
+    :fsize 192
+    :lastmodtime '(21254 28916 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "test.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("main" function (:type "int") nil [21 94]))          
+    :file "test.c"
+    :pointmax 94
+    :fsize 93
+    :lastmodtime '(21189 51518 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!usr!home!mike!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

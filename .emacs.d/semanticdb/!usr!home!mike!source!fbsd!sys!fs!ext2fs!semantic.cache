@@ -1,0 +1,946 @@
+;; Object ext2fs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ext2fs/"
+  :tables (list 
+   (semanticdb-table "ext2_htree.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("sys/param.h" include (:system-flag t) nil [1504 1526])
+            ("sys/endian.h" include (:system-flag t) nil [1527 1550])
+            ("sys/systm.h" include (:system-flag t) nil [1551 1573])
+            ("sys/namei.h" include (:system-flag t) nil [1574 1596])
+            ("sys/bio.h" include (:system-flag t) nil [1597 1617])
+            ("sys/buf.h" include (:system-flag t) nil [1618 1638])
+            ("sys/endian.h" include (:system-flag t) nil [1639 1662])
+            ("sys/mount.h" include (:system-flag t) nil [1663 1685])
+            ("sys/vnode.h" include (:system-flag t) nil [1686 1708])
+            ("sys/malloc.h" include (:system-flag t) nil [1709 1732])
+            ("sys/dirent.h" include (:system-flag t) nil [1733 1756])
+            ("sys/sysctl.h" include (:system-flag t) nil [1757 1780])
+            ("ufs/ufs/dir.h" include (:system-flag t) nil [1782 1806])
+            ("fs/ext2fs/inode.h" include (:system-flag t) nil [1808 1836])
+            ("fs/ext2fs/ext2_mount.h" include (:system-flag t) nil [1837 1870])
+            ("fs/ext2fs/ext2fs.h" include (:system-flag t) nil [1871 1900])
+            ("fs/ext2fs/fs.h" include (:system-flag t) nil [1901 1926])
+            ("fs/ext2fs/ext2_extern.h" include (:system-flag t) nil [1927 1961])
+            ("fs/ext2fs/ext2_dinode.h" include (:system-flag t) nil [1962 1996])
+            ("fs/ext2fs/ext2_dir.h" include (:system-flag t) nil [1997 2028])
+            ("fs/ext2fs/htree.h" include (:system-flag t) nil [2029 2057])
+            ("ext2_append_entry" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("block" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2089 2101])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2102 2119])
+                    ("last_entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2126 2161])
+                    ("new_entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2168 2202]))                  
+                :type "void")
+                nil [2059 2203])
+            ("intext2_htree_append_block" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vp" variable
+                       (:pointer 1
+                        :type ("vnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2238 2255])
+                    ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2256 2267])
+                    ("cnp" variable
+                       (:pointer 1
+                        :type ("componentname" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2272 2298])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2299 2316]))                  
+                :type "int")
+                nil [2204 2317])
+            ("ext2_htree_check_next" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2351 2368])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2369 2383])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2390 2407])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2408 2446]))                  
+                :type "int")
+                nil [2318 2447])
+            ("ext2_htree_cmp_sort_entry" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("e1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2485 2500])
+                    ("e2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2501 2516]))                  
+                :type "int")
+                nil [2448 2517])
+            ("ext2_htree_find_leaf" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2550 2567])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2568 2585])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [2592 2604])
+                    ("hash" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2605 2620])
+                    ("hash_verion" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2621 2642])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2649 2687]))                  
+                :type "int")
+                nil [2518 2688])
+            ("ext2_htree_get_block" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2726 2756]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2689 2757])
+            ("ext2_htree_get_count" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2795 2825]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [2758 2826])
+            ("ext2_htree_get_hash" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2863 2893]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2827 2894])
+            ("ext2_htree_get_limit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2932 2962]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [2895 2963])
+            ("ext2_htree_insert_entry_to_level" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("level" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_level" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3009 3049])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3056 3070])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3071 3084]))                  
+                :type "void")
+                nil [2964 3085])
+            ("ext2_htree_insert_entry" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3122 3160])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3167 3181])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3182 3195]))                  
+                :type "void")
+                nil [3086 3196])
+            ("ext2_htree_node_limit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3235 3252]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3197 3253])
+            ("ext2_htree_set_block" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3287 3317])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3324 3337]))                  
+                :type "void")
+                nil [3254 3338])
+            ("ext2_htree_set_count" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3372 3402])
+                    ("cnt" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3409 3422]))                  
+                :type "void")
+                nil [3339 3423])
+            ("ext2_htree_set_hash" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3456 3486])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3493 3507]))                  
+                :type "void")
+                nil [3424 3508])
+            ("ext2_htree_set_limit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3542 3572])
+                    ("limit" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3579 3594]))                  
+                :type "void")
+                nil [3509 3595])
+            ("ext2_htree_split_dirblock" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("block1" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3633 3646])
+                    ("block2" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3647 3660])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3667 3684])
+                    ("hash_seed" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3685 3705])
+                    ("hash_version" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3706 3727])
+                    ("split_hash" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3734 3755])
+                    ("entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3756 3787]))                  
+                :type "int")
+                nil [3596 3788])
+            ("ext2_htree_release" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3820 3858]))                  
+                :type "void")
+                nil [3789 3859])
+            ("ext2_htree_root_limit" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3898 3915])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [3916 3924]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3860 3925])
+            ("ext2_htree_writebuf" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3957 3995]))                  
+                :type "int")
+                nil [3926 3996])
+            ("ext2_htree_has_idx" function
+               (:arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4021 4038]))                  
+                :type "int")
+                nil [3998 4177])
+            ("ext2_htree_check_next" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4212 4229])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4230 4244])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4245 4262])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4265 4303]))                  
+                :type "int")
+                nil [4179 5170])
+            ("ext2_htree_get_block" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5209 5239]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5172 5277])
+            ("ext2_htree_set_block" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5312 5342])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5343 5356]))                  
+                :type "void")
+                nil [5279 5378])
+            ("ext2_htree_get_count" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5417 5447]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [5380 5513])
+            ("ext2_htree_set_count" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5548 5578])
+                    ("cnt" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5579 5592]))                  
+                :type "void")
+                nil [5515 5655])
+            ("ext2_htree_get_hash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5693 5723]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5657 5749])
+            ("ext2_htree_get_limit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5788 5818]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [5751 5884])
+            ("ext2_htree_set_hash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5918 5948])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5949 5963]))                  
+                :type "void")
+                nil [5886 5987])
+            ("ext2_htree_set_limit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ep" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6022 6052])
+                    ("limit" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6053 6068]))                  
+                :type "void")
+                nil [5989 6133])
+            ("ext2_htree_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6166 6204]))                  
+                :type "void")
+                nil [6135 6340])
+            ("ext2_htree_root_limit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6380 6397])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [6398 6406]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [6342 6569])
+            ("ext2_htree_node_limit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6609 6626]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [6571 6789])
+            ("ext2_htree_find_leaf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6823 6840])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6841 6858])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [6859 6871])
+                    ("hash" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6879 6894])
+                    ("hash_ver" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6895 6913])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6921 6959]))                  
+                :type "int")
+                nil [6791 9134])
+            ("ext2_htree_lookup" function
+               (:arguments 
+                  ( ("ip" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9215 9232])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9233 9250])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [9251 9263])
+                    ("bpp" variable
+                       (:pointer 2
+                        :type ("buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9268 9285])
+                    ("entryoffp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [9286 9301])
+                    ("offp" variable
+                       (:pointer 1
+                        :type ("doff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9302 9315])
+                    ("prevoffp" variable
+                       (:pointer 1
+                        :type ("doff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9320 9337])
+                    ("endusefulp" variable
+                       (:pointer 1
+                        :type ("doff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9338 9357])
+                    ("ss" variable
+                       (:pointer 1
+                        :type ("ext2fs_searchslot" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9362 9391]))                  
+                :type "int")
+                nil [9193 10728])
+            ("ext2_htree_append_block" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vp" variable
+                       (:pointer 1
+                        :type ("vnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10765 10782])
+                    ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10783 10794])
+                    ("cnp" variable
+                       (:pointer 1
+                        :type ("componentname" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10798 10824])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10825 10842]))                  
+                :type "int")
+                nil [10730 11364])
+            ("ext2_htree_writebuf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11397 11435]))                  
+                :type "int")
+                nil [11366 11613])
+            ("ext2_htree_insert_entry_to_level" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("level" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_level" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11660 11700])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11706 11720])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11721 11734]))                  
+                :type "void")
+                nil [11615 12103])
+            ("ext2_htree_insert_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("ext2fs_htree_lookup_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12192 12230])
+                    ("hash" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12234 12248])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12249 12262]))                  
+                :type "void")
+                nil [12156 12412])
+            ("ext2_htree_cmp_sort_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("e1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12553 12568])
+                    ("e2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12569 12584]))                  
+                :type "int")
+                nil [12516 12872])
+            ("ext2_append_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("block" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12965 12977])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12978 12995])
+                    ("last_entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13000 13035])
+                    ("new_entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13040 13074]))                  
+                :type "void")
+                nil [12935 13402])
+            ("ext2_htree_split_dirblock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("block1" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13517 13530])
+                    ("block2" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13531 13544])
+                    ("blksize" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13545 13562])
+                    ("hash_seed" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13568 13588])
+                    ("hash_version" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13589 13610])
+                    ("split_hash" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13616 13637])
+                    ("entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13638 13668]))                  
+                :type "int")
+                nil [13480 16611])
+            ("ext2_htree_create_index" function
+               (:arguments 
+                  ( ("vp" variable
+                       (:pointer 1
+                        :type ("vnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16689 16706])
+                    ("cnp" variable
+                       (:pointer 1
+                        :type ("componentname" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16707 16733])
+                    ("new_entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16737 16771]))                  
+                :type "int")
+                nil [16661 19252])
+            ("ext2_htree_add_entry" function
+               (:arguments 
+                  ( ("dvp" variable
+                       (:pointer 1
+                        :type ("vnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19338 19356])
+                    ("entry" variable
+                       (:pointer 1
+                        :type ("ext2fs_direct_2" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19357 19387])
+                    ("cnp" variable
+                       (:pointer 1
+                        :type ("componentname" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19395 19421]))                  
+                :type "int")
+                nil [19313 24539]))          
+    :file "ext2_htree.c"
+    :pointmax 24540
+    :fsize 24542
+    :lastmodtime '(21256 34563 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "ext2_hash.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("sys/param.h" include (:system-flag t) nil [2486 2508])
+            ("sys/systm.h" include (:system-flag t) nil [2509 2531])
+            ("sys/conf.h" include (:system-flag t) nil [2532 2553])
+            ("sys/vnode.h" include (:system-flag t) nil [2554 2576])
+            ("sys/stat.h" include (:system-flag t) nil [2577 2598])
+            ("sys/mount.h" include (:system-flag t) nil [2599 2621])
+            ("fs/ext2fs/htree.h" include (:system-flag t) nil [2623 2651])
+            ("fs/ext2fs/inode.h" include (:system-flag t) nil [2652 2680])
+            ("fs/ext2fs/ext2_mount.h" include (:system-flag t) nil [2681 2714])
+            ("fs/ext2fs/ext2_extern.h" include (:system-flag t) nil [2715 2749])
+            ("F" variable (:constant-flag t) nil [2795 2796])
+            ("G" variable (:constant-flag t) nil [2843 2844])
+            ("H" variable (:constant-flag t) nil [2904 2905])
+            ("ROTATE_LEFT" variable (:constant-flag t) nil [2982 2993])
+            ("FF" variable (:constant-flag t) nil [3180 3182])
+            ("GG" variable (:constant-flag t) nil [3284 3286])
+            ("HH" variable (:constant-flag t) nil [3411 3413])
+            ("ext2_half_md4" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hash" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4010 4027])
+                    ("data" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4028 4045]))                  
+                :type "void")
+                nil [3984 4940])
+            ("ext2_tea" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hash" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5000 5017])
+                    ("data" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5018 5035]))                  
+                :type "void")
+                nil [4979 5361])
+            ("ext2_legacy_hash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5396 5413])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [5414 5422])
+                    ("unsigned_char" variable (:type "int") (reparse-symbol arg-sub-list) [5423 5441]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5363 5880])
+            ("ext2_prep_hashbuf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5912 5928])
+                    ("slen" variable (:type "int") (reparse-symbol arg-sub-list) [5929 5938])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5939 5953])
+                    ("dlen" variable (:type "int") (reparse-symbol arg-sub-list) [5954 5963])
+                    ("unsigned_char" variable (:type "int") (reparse-symbol arg-sub-list) [5970 5988]))                  
+                :type "void")
+                nil [5882 6759])
+            ("ext2_htree_hash" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6781 6798])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [6799 6807])
+                    ("hash_seed" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6810 6830])
+                    ("hash_version" variable (:type "int") (reparse-symbol arg-sub-list) [6831 6848])
+                    ("hash_major" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6851 6872])
+                    ("hash_minor" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6873 6894]))                  
+                :type "int")
+                nil [6761 8194]))          
+    :file "ext2_hash.c"
+    :pointmax 8195
+    :fsize 8194
+    :lastmodtime '(21223 63940 0 0)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("HH" (spp-arg-list ("a" "b" "c" "d" "x" "s") 3413 . 3431) . ((semantic-list "{ \\
+	(a) += H ((b), (c), (d)) + (x) + (uint32_t)0x6ED9EBA1; \\
+	(a) = ROTATE_LEFT ((a), (s)); \\
+}" 3432 . 3528)))
+          ("F" (spp-arg-list ("x" "y" "z") 2796 . 2805) . ((semantic-list "(((x) & (y)) | ((~x) & (z)))" 2806 . 2834)))
+          ("G" (spp-arg-list ("x" "y" "z") 2844 . 2853) . ((semantic-list "(((x) & (y)) | ((x) & (z)) | ((y) & (z)))" 2854 . 2895)))
+          ("H" (spp-arg-list ("x" "y" "z") 2905 . 2914) . ((semantic-list "((x) ^ (y) ^ (z))" 2915 . 2932)))
+          ("ROTATE_LEFT" (spp-arg-list ("x" "n") 2993 . 2999) . ((semantic-list "(((x) << (n)) | ((x) >> (32 - (n))))" 3000 . 3036)))
+          ("FF" (spp-arg-list ("a" "b" "c" "d" "x" "s") 3182 . 3200) . ((semantic-list "{ \\
+	(a) += F ((b), (c), (d)) + (x); \\
+	(a) = ROTATE_LEFT ((a), (s)); \\
+}" 3201 . 3274)))
+          ("GG" (spp-arg-list ("a" "b" "c" "d" "x" "s") 3286 . 3304) . ((semantic-list "{ \\
+	(a) += G ((b), (c), (d)) + (x) + (uint32_t)0x5A827999; \\
+	(a) = ROTATE_LEFT ((a), (s)); \\
+}" 3305 . 3401)))
+          )
+
+    )
+   )
+  :file "!usr!home!mike!source!fbsd!sys!fs!ext2fs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -1,0 +1,4 @@
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/FreeBSD/FreeBSDThread.cpp
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/FreeBSD/#FreeBSDThread.cpp#
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/POSIXThread.cpp
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/#POSIXThread.cpp#

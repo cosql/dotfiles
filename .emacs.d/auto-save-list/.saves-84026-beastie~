@@ -1,0 +1,4 @@
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/RegisterContextFreeBSD_x86_64.cpp
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/#RegisterContextFreeBSD_x86_64.cpp#
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/RegisterContextLinux_x86_64.cpp
+/usr/home/mike/source/llvm/tools/lldb/source/Plugins/Process/POSIX/#RegisterContextLinux_x86_64.cpp#
